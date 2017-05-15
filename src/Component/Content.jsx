@@ -2,9 +2,11 @@ import React, {Component, PropTypes} from 'react';
 //载入react dom渲染模块
 import ReactDOM, {render} from 'react-dom';
 
-import Input from './From/Input/'
+import Input from './From/Input'
 
 import Select from "./From/Select";
+
+import Button from './From/Button'
 
 import {Template} from './Common/Index';
 
@@ -132,9 +134,18 @@ class Content extends Component{
 					privatestyle={{width:'215px',margin:'0 auto'}} />
 				</div>
 				<div className="item_block bottom_box">
-					<a className="button" id='get_form_data' href="javascript:void(0)" onClick={this.submit.bind(this)}> Click Me! (0)</a>
-					<a className="button_grey" href="javascript:void(0)"> Click Me! (1)</a>
-					<a className="button_disable" href="javascript:void(0)"> Click Me! (2)</a>
+					<Button iconClass="icon iconfont icon-commentfill" bindClick={this.submit.bind(this)}>
+						Click Me! (0)
+					</Button>
+					<Button >
+						Click Me! (0)
+					</Button>
+					<Button iconClass="icon iconfont icon-friend_add_light" theme="grey">
+						Click Me! (1)
+					</Button>
+					<Button iconClass="icon iconfont icon-refresh_light" theme="write">
+						Click Me! (2)
+					</Button>
 				</div>
 				<div className="item_block">
 					<span id="for_id">

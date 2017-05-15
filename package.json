@@ -44,6 +44,7 @@
     "less-loader": "^4.0.3",
     "mockjs": "^1.0.1-beta3",
     "postcss-loader": "^2.0.5",
+    "prop-types": "^15.5.10",
     "pure-render-decorator": "^1.2.1",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",

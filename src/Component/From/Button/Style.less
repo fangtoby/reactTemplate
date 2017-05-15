@@ -1,0 +1,56 @@
+.button{
+	padding: 5px 10px;
+    font-weight: bold;
+    text-decoration: none;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    display: inline-block;
+	transition: all ease-out 0.5s;
+	-moz-transition: all ease-out 0.5s;	/* Firefox 4 */
+	-webkit-transition: all ease-out 0.5s;	/* Safari 和 Chrome */
+	-o-transition: all ease-out 0.5s;	/* Opera */
+    margin:0 5px;
+    height: 30px;
+    span{
+        line-height: 18px;
+    }
+    .icon_unvisible{
+        display: none;
+    }
+    .icon{
+        color: #333;
+        padding-right: 10px;
+        vertical-align: text-top;
+    }
+}
+.button_blue_theme{
+    background: #4d90fe;
+    border: solid 1px #3079ed;
+    color: #fff;
+    &:hover{
+        background: #357ae8;
+        border-color: #2f5bb7
+    }
+    &:active{
+        background: #2f5bb7;
+    }
+    .icon{
+        color: #fff;
+        padding-right: 10px;
+    }
+}
+.button_grey_theme{
+    background: #f8f8f8;
+    border: solid 1px #c6c6c6;
+    color: #666;
+}
+.button_write_theme{
+    background: #fff;
+    border: solid 1px #c6c6c6;
+    color: #aaa;
+    cursor: not-allowed;
+    .icon{
+        color: #aaa;
+        padding-right: 10px;
+    }
+}

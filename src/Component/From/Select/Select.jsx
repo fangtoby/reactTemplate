@@ -15,12 +15,6 @@ class Select extends Component{
 				status: true
 			})
 		}
-		this._onBlur = () => {
-			console.log(1)
-			this.setState({
-				status: false
-			})
-		}
 		this.onSeleted = (event)=>{
 			const target = event.target
 
@@ -77,10 +71,12 @@ class Select extends Component{
 	render(){
 		const {seletedId,value} = this.state;
 		return (
-			<div className="za_select_component" ref='select_component_target' style={ this.props.privatestyle }>
+			<div className={this.state.status ? "za_select_component select_active":"za_select_component"} ref='select_component_target' style={ this.props.privatestyle }>
 				<div className="za_select_input">
 					<input value={this.state.value} type="text" placeholder="请选择"  readOnly="readonly"  onFocus={this.onFocus.bind(this)} />
 				</div>
+				<i className="icon iconfont icon-unfold"></i>
+				<i className="icon iconfont icon-fold"></i>
 				{
 					this.state.status ? <div className="za_select_content" >
 						<ul>

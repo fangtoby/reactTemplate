@@ -2,6 +2,18 @@
 	position: relative;
 	height: 32px;
 	border: solid 1px #dddfe2;
+	.icon{
+		position: absolute;
+		right: 7px;
+		top: 7px;
+		color: #dddfe2;
+	}
+	.icon-unfold{
+		display: block;
+	}
+	.icon-fold{
+		display: none;
+	}
 	.za_select_input{
 		input{
 			width: 100%;
@@ -80,4 +92,12 @@
 		}
 	}
 	
+}
+.select_active{
+	.icon-unfold{
+		display: none;
+	}
+	.icon-fold{
+		display: block;
+	}
 }

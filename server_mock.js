@@ -12,9 +12,12 @@ var path = require('path');
 var color = require('colors-cli');
 var server = express();
 var bodyParser = require('body-parser');
-var urlencodedParser = bodyParser.urlencoded({
+
+server.use(bodyParser.urlencoded({
 	extended: false
-});
+}));
+server.use(bodyParser.json());
+
 var config = {
 	path: './mock',
 	port: 8090
