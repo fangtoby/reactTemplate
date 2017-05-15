@@ -16,6 +16,7 @@ class Content extends Component{
 	constructor(props){
 		super(props)
 		this.state = {
+			loginStatus: 'Login',
 			username: {
 				value: '',
 				error: false,
@@ -71,8 +72,20 @@ class Content extends Component{
 				password:this.state.password.value,
 				type: this.state.selectList.value
 			}
+			this.setState({
+				loginStatus:'Loading...'
+			})
 			this.props.actions.Login.login('/api/login', post ,(result)=>{
 				console.log( result )
+				if(result == 'success'){
+					this.setState({
+						loginStatus:'Login'
+					})
+				}else{
+					this.setState({
+						loginStatus:'Login'
+					})
+				}
 			})
 		}
 
@@ -135,7 +148,7 @@ class Content extends Component{
 				</div>
 				<div className="item_block bottom_box">
 					<Button iconClass="icon iconfont icon-commentfill" bindClick={this.submit.bind(this)}>
-						Click Me! (0)
+						{this.state.loginStatus}
 					</Button>
 					<Button >
 						Click Me! (0)

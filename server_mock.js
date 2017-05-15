@@ -19,6 +19,7 @@ server.use(bodyParser.urlencoded({
 server.use(bodyParser.json());
 
 var config = {
+	timeout: 3000,
 	path: './mock',
 	port: 8090
 
@@ -45,18 +46,24 @@ function renderLog(req, res) {
 function routerDefined(config) {
 	if (config.type == 'GET') {
 		server.get(config.api, function(req, res) {
-			config.response(req, res);
-			renderLog(req, res);
+			setTimeout(() => {
+				config.response(req, res);
+				renderLog(req, res);
+			}, config.timeout)
 		})
 	} else if (config.type == 'POST') {
 		server.post(config.api, function(req, res) {
-			config.response(req, res);
-			renderLog(req, res);
+			setTimeout(() => {
+				config.response(req, res);
+				renderLog(req, res);
+			}, config.timeout)
 		})
 	} else {
 		server.all(config.api, function(req, res) {
-			config.response(req, res);
-			renderLog(req, res);
+			setTimeout(() => {
+				config.response(req, res);
+				renderLog(req, res);
+			}, config.timeout)
 		})
 	}
 }
