@@ -1,0 +1,126 @@
+const d = document
+
+const p = d.getElementsByName('password')
+
+const u = d.getElementsByName('username')
+
+const s = d.getElementById('get_form_data')
+
+if (d.addEventListener) {
+	s.addEventListener('click', (e) => {
+		console.log(2)
+		console.log('password:' + p[0].value)
+		console.log('username:' + u[0].value)
+	})
+} else {
+	s.detachEvent('onclick', (e) => {
+		console.log(3)
+		console.log('password:' + p[0].value)
+		console.log('username:' + u[0].value)
+	})
+}
+
+// let var const 区别
+
+//合并数组
+
+let a = [2, 4, {
+	a: 3
+}, 534, 34]
+
+let b = [23, 233, '23', 3, new Date(), 4, 5, 4]
+
+Array.prototype.push.apply(a, b)
+
+// call,apply的区别
+
+// 判断类型 String Array Object Date Number Boolean Function
+
+//获取Id name
+
+//获取Class
+
+function isString(param) {
+	return Object.prototype.toString.call(param) == '[object String]'
+}
+
+function getPureClassArray(str) {
+	return str.match(/[\d\w\.\#-_]+/g)
+}
+
+// console.log(getPureClassArray('.myclass1, .myclass2, .myclass3, .myclass4'))
+
+function _getDomById(idstring) {
+	if (document.querySelector != undefined) {
+		return document.querySelector(idstring)
+	}
+	return document.getElementById(idstring)
+}
+
+function _getDomByClass(classnames) {
+
+	var classNameArr = getPureClassArray(classnames.split(',').join(' '))
+
+	var classobj = new Array()
+
+	if (document.querySelectorAll != undefined) {
+
+		return document.querySelectorAll(classnames)
+
+	} else {
+
+		var tags = document.getElementsByTagName("*")
+
+		for (var i in tags) {
+
+			var _tags = tags[i]
+
+			if (_tags.nodeType == 1) {
+
+				var canPush = true
+
+				var __classAttr__ = _tags.getAttribute('class')
+
+				if (canPush) {
+					if (isString(__classAttr__)) {
+						var __classAttr_add__ = '.' + getPureClassArray(__classAttr__).join(' .')
+						for (var i = classNameArr.length - 1; i >= 0; i--) {
+							if (canPush) {
+								if (__classAttr_add__.match(new RegExp('(\\s|^)' + classNameArr[i] + '(\\s|$)'))) {
+									classobj.push(_tags)
+									canPush = false
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		return classobj
+	}
+}
+
+
+console.log(_getDomByClass('.for_class, .for_class_01, .testClass'))
+	// console.log($('#for_id'))
+
+//react jquery angular vue.js
+
+//react life circle
+
+//react model fadeIn fadeOut
+
+//react select component
+
+//react input error message
+
+//react redux router
+
+//react router split
+
+//react actions split
+
+//react redux split
+
+
+

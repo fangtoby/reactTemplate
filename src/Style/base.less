@@ -1,0 +1,134 @@
+* {
+    margin: 0;
+    padding: 0;
+    font: 12px/1  PingFangSC-Thin,Lantinghei SC,Open Sans,Arial,Hiragino Sans GB,Microsoft YaHei,"\\5FAE\8F6F\96C5\9ED1",STHeiti,WenQuanYi Micro Hei,SimSun,sans-serif;
+}
+body{
+	background-color: #f9f9f9;
+	color: #333;
+}
+
+
+.clearfix:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0
+}
+
+.clearfix {
+    display: inline-block
+}
+
+* html .clearfix {
+    height: 1%
+}
+
+.clearfix {
+    display: block
+}
+
+*,:after,:before {
+    box-sizing: border-box
+}
+
+h1{
+	font-size: 30px;
+}
+
+
+.container{
+	
+}
+
+.button{
+	padding: 10px 20px;
+	background: #4d90fe;
+	border: solid 1px #3079ed;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    display: inline-block;
+	transition: all ease-out 0.5s;
+	-moz-transition: all ease-out 0.5s;	/* Firefox 4 */
+	-webkit-transition: all ease-out 0.5s;	/* Safari 和 Chrome */
+	-o-transition: all ease-out 0.5s;	/* Opera */
+}
+.button:hover{
+    background: #357ae8;
+    border-color: #2f5bb7
+}
+.button:active{
+    background: #2f5bb7;
+}
+.button_grey{
+	padding: 10px 20px;
+	background: #f8f8f8;
+    border: 1px solid #c6c6c6;
+    font-weight: bold;
+    color: #666;
+    text-decoration: none;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    display: inline-block;
+
+}
+.button_disable{
+	padding: 10px 20px;
+    border: 1px solid #c6c6c6;
+    font-weight: bold;
+    color: #aaa;
+    text-decoration: none;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    display: inline-block;
+
+}
+.item_block{
+	padding-bottom: 20px;
+	text-align: center;
+}
+.header{
+	margin: 30px auto;
+	width: 300px;
+	position: relative;
+}
+.right_top_border,.left_botton_border{
+	position: absolute;
+	height: 50px;
+	width: 300px;
+}
+.right_top_border{
+	border-top: solid 1px #3079ed;
+	border-right: solid 1px #3079ed;
+	left: 5px;
+	top: -5px;
+}
+.left_botton_border{
+	border-bottom: solid 1px #3079ed;
+	border-left: solid 1px #3079ed;
+	left: -5px;
+	top: 5px;
+}
+.logo_title{
+	display: block;
+	width: 300px;
+	text-align: center;
+	background-color: #3079ed;
+	color: #fff;
+	line-height: 50px;
+	height: 50px;
+}
+#for_id{
+	text-decoration: underline;
+	color: #333;
+	padding-right: 10px;
+}
+.for_class{
+	text-decoration: underline;
+	color: #4d90fe;
+}

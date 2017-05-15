@@ -1,0 +1,6 @@
+public
+node_modules
+npm-debug.log
+data
+assert
+.local.config.js
