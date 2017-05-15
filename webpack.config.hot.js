@@ -23,7 +23,7 @@ module.exports = {
         publicPath: '/public/dist/', //编译好的文件，在服务器的路径,这是静态资源引用路径
         path: BUILD_PATH, //发布文件地址
         filename: '[name].js', //编译后的文件名字
-        chunkFilename: '[name].[chunkhash:5].min.js',
+        chunkFilename: '[name].[id].[chunkhash:8].min.js',
     },
     module: {
         loaders: [{

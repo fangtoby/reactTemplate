@@ -64,7 +64,12 @@ class Content extends Component{
 			// // object.keys( this.state )
 			// console.log( this.props)
 			// console.log( this.state )
-			this.props.actions.Login.login('/api/login',{},(result)=>{
+			const post = {
+				username:this.state.username.value,
+				password:this.state.password.value,
+				type: this.state.selectList.value
+			}
+			this.props.actions.Login.login('/api/login', post ,(result)=>{
 				console.log( result )
 			})
 		}

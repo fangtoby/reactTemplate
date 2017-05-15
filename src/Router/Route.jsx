@@ -9,9 +9,9 @@ import {
 import Bundle from './bundle';
 
 // 导入search组件，需要在路径前面加上 bundle-loader?lazy!
-import ContentContainer from 'bundle-loader?lazy!../Component/Content';
+import ContentContainer from 'bundle-loader?lazy&name=Component.[name]!../Component/Content';
 
-import LoginContainer from 'bundle-loader?lazy!../Component/Login'
+import LoginContainer from 'bundle-loader?lazy&name=Component.[name]!../Component/Login'
 
 const Content = () => (
     <Bundle load={ContentContainer}>

@@ -12,11 +12,11 @@ class Login extends Component{
 
 	}
 	componentDidMount(){
-
+		
 	}
 	render(){
 		return (
-			<Layout>
+			<Layout >
 				<span>Hello</span>
 			</Layout>
 		)
