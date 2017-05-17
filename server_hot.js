@@ -10,19 +10,6 @@ var uri = {
     remoteApiHost: localConfig.remoteApiHost
 }
 
-function relayRequestHeaders(proxyReq, req) {
-    Object.keys(req.headers).forEach(function(key) {
-        proxyReq.setHeader(key, req.headers[key]);
-    });
-};
-
-function relayResponseHeaders(proxyRes, req, res) {
-    Object.keys(proxyRes.headers).forEach(function(key) {
-        // console.log(proxyRes);
-        res.append(key, proxyRes.headers[key]);
-    });
-};
-
 var app = express();
 
 var compiler = webpack(config);
@@ -52,10 +39,13 @@ app.use(api, proxyMiddleware({
 
 app.use(require('webpack-hot-middleware')(compiler));
 
+
 //将其他路由，全部返回index.html
 app.get('*', function(req, res) {
     res.sendFile(__dirname + '/index.html')
 });
+
+
 
 app.listen(uri.proxy, function() {
     console.log('正常打开' + uri.proxy + '端口')

@@ -43,25 +43,25 @@ function renderLog(req, res) {
 	console.log("------------------:" + new Date().toUTCString());
 }
 
-function routerDefined(config) {
-	if (config.type == 'GET') {
-		server.get(config.api, function(req, res) {
+function routerDefined(_config) {
+	if (_config.type == 'GET') {
+		server.get(_config.api, function(req, res) {
 			setTimeout(() => {
-				config.response(req, res);
+				_config.response(req, res);
 				renderLog(req, res);
 			}, config.timeout)
 		})
-	} else if (config.type == 'POST') {
-		server.post(config.api, function(req, res) {
+	} else if (_config.type == 'POST') {
+		server.post(_config.api, function(req, res) {
 			setTimeout(() => {
-				config.response(req, res);
+				_config.response(req, res);
 				renderLog(req, res);
 			}, config.timeout)
 		})
 	} else {
-		server.all(config.api, function(req, res) {
+		server.all(_config.api, function(req, res) {
 			setTimeout(() => {
-				config.response(req, res);
+				_config.response(req, res);
 				renderLog(req, res);
 			}, config.timeout)
 		})

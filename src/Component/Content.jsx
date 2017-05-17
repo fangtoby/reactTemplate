@@ -75,7 +75,7 @@ class Content extends Component{
 			this.setState({
 				loginStatus:'Loading...'
 			})
-			this.props.actions.Login.login('/api/login', post ,(result)=>{
+			this.props.actions.Login.login('/dbserver/get/user', post ,(result)=>{
 				console.log( result )
 				if(result == 'success'){
 					this.setState({
